@@ -88,7 +88,7 @@ export default function Home() {
           </div>
           <div className="w-full flex items-center justify-center">
             <ul className="flex flex-col md:flex-row gap-7 md:gap-10">
-              {DroneProduct.map((item: any, index: number) => {
+              {DroneProduct.map((item: DroneProductProps, index: number) => {
                 let direction: "up" | "down" | "left" | "right" = "up";
 
                 if (index === 0) direction = "right"; // card kiri → masuk dari kanan

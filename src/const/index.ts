@@ -41,7 +41,7 @@ export const MainNavigations:MainNavProps[] = [
   },
 ]
 
-export const FooterNav = [
+export const FooterNav:FooterNavProps[] = [
   {
     label: 'Products',
     links: [
@@ -113,7 +113,7 @@ export const TimelineContent:TimeLineProps[] = [
   }
 ]
 
-export const DroneProduct = [
+export const DroneProduct:DroneProductProps[] = [
   {
     label: 'M-10',
     image: '/image/m10.png',

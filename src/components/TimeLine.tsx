@@ -21,7 +21,7 @@ const AltrnateTimeline = ({
   customSx,
 }: {
   position: PositionType;
-  customSx?: any;
+  customSx?: any | {};
 }) => {
   return (
     <Timeline position={position} sx={customSx}>

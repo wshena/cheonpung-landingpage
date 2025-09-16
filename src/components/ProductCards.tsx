@@ -4,7 +4,6 @@ import React, { useRef, useState } from 'react'
 
 const ProductCards = ({item}:{item:{ label:string, image:string, features:string[] }}) => {
   const [showMore, setShowMore] = useState(false);
-  const contentRef = useRef<HTMLParagraphElement>(null)
 
   const handleClick = () => setShowMore(!showMore)
 

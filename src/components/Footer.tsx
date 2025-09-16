@@ -18,11 +18,11 @@ const Footer = () => {
           </div>
           <nav className='flex flex-col md:flex-row items-start gap-5 md:gap-10'>
             <ul className="flex flex-col items-start md:flex-row gap-5 md:gap-10">
-              {FooterNav.map((item:any) => (
+              {FooterNav.map((item:FooterNavProps) => (
                 <li key={item.label} className='flex flex-col items-start gap-3 md:gap-5'>
                   <h3 className='text-md md:text-lg text-gray-600'>{item.label}</h3>
                   <div className="flex flex-col gap-1 md:gap-3">
-                    {item.links.map((item:any) => (
+                    {item.links.map((item:MainNavProps) => (
                       <Link key={item.label} href={item.link} className='text-sm md:text-md hover:text-gray-600 transition-colors duration-300 ease-in-out'>{item.label}</Link>
                     ))}
                   </div>
