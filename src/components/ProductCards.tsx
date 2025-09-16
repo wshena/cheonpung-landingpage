@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 
 const ProductCards = ({item}:{item:{ label:string, image:string, features:string[] }}) => {
   const [showMore, setShowMore] = useState(false);
