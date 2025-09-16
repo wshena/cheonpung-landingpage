@@ -1,103 +1,112 @@
-import Image from "next/image";
+import ScrollAnimate from "@/components/animations/ScrollAnimate";
+import ContentContainer from "@/components/ContentContainer";
+import ProductCards from "@/components/ProductCards";
+import AltrnateTimeline from "@/components/TimeLine";
+import { H1 } from "@/components/typography";
+import { AboutCheonpung, DroneProduct } from "@/const";
+import { timelineItemClasses } from "@mui/lab/TimelineItem";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main className="w-full">
+      <section id="hero" className="pt-navbar w-full">
+        <div className="relative">
+          {/* video background */}
+          <video
+            className="w-full h-[500px]"
+            playsInline
+            loop
+            autoPlay
+            preload="auto"
+            muted
+            style={{
+              objectFit: 'cover',
+              overflowClipMargin: 'content-box',
+              overflow: 'clip'
+            }}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <source src="/video/default.mp4" type="video/mp4" />
+          </video>
+          
+          <div className="absolute top-0 left-0 w-full h-full bg-black/50 flex items-center justify-center text-white">
+            <div className="px-5 md:px-0 flex flex-col items-center gap-3">
+              <h1 className="text-center font-semibol capitalize text-[1rem] md:text-[1.5rem] lg:text-[2rem] xl:text-[2.5rem]">The sky is calling! Let’s ride the wind and go!</h1>
+              <button className="cursor-pointer transition-all duration-300 ease-in-out px-5 py-2 rounded-[5px] bg-white text-black hover:bg-black hover:text-white text-sm md:text-md lg:text-xl">Explore Our Drone</button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section id="about" className="py-5 md:py-10">
+        <ContentContainer>
+          <ScrollAnimate direction="right">
+            <H1 content="What We Do." />
+          </ScrollAnimate>
+          <ScrollAnimate direction="left">
+            <div className="w-full flex items-center justify-center">
+              <p className="w-full md:w-[90%] xl:w-[80%] text-[1rem] md:text-[1.5rem] lg:text-[2rem] font-[400]">{AboutCheonpung}</p>
+            </div>
+          </ScrollAnimate>
+        </ContentContainer>
+      </section>
+      
+      <ContentContainer>
+        <ScrollAnimate direction="right">
+          <H1 content="10 Years of Expertise, Building a Diverse Product Lineup Driven by Market Needs" />
+        </ScrollAnimate>
+      </ContentContainer>
+
+      <section id="time-line" className="py-5 md:py-10">
+        <ContentContainer>
+          <div className="flex flex-col items-center gap-5">
+            <ScrollAnimate direction="down">
+              <H1 content="Milestones" />
+            </ScrollAnimate>
+            {/* desktop timeline */}
+            <div className="hidden md:block">
+              <AltrnateTimeline position="alternate" />
+            </div>
+            {/* mobile timeline */}
+            <div className="block md:hidden">
+              <AltrnateTimeline position="right" customSx={
+                {
+                  [`& .${timelineItemClasses.root}:before`]: {
+                    flex: 0,
+                    padding: 0,
+                  },
+                }
+              } />
+            </div>
+          </div>
+        </ContentContainer>
+      </section>
+
+      <section id="products" className="py-5 md:py-10">
+        <ContentContainer>
+          <div className="space-y-3 text-center">
+            <H1 content="Our Drone" />
+          </div>
+          <div className="w-full flex items-center justify-center">
+            <ul className="flex flex-col md:flex-row gap-7 md:gap-10">
+              {DroneProduct.map((item: any, index: number) => {
+                let direction: "up" | "down" | "left" | "right" = "up";
+
+                if (index === 0) direction = "right"; // card kiri → masuk dari kanan
+                if (index === 1) direction = "up";  // card tengah → masuk dari bawah (y: +50 → 0)
+                if (index === 2) direction = "left";  // card kanan → masuk dari kiri
+
+                return (
+                  <li key={item.label}>
+                    <ScrollAnimate direction={direction}>
+                      <ProductCards item={item} />
+                    </ScrollAnimate>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </ContentContainer>
+      </section>
+    </main>
   );
 }
